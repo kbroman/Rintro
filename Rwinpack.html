@@ -1,0 +1,97 @@
+<html> <head>
+<title>Building R packages in Windows</title>
+<link rel=stylesheet type="text/css" href="kbroman.css">
+</head>
+
+<body>
+<a name="top"></a><h2>Building R packages in Windows</h2>
+
+<p class=noindent><hr>
+
+<p class=noindent><font color="red"><b>Disclaimer</b>: The
+instructions below describe what I've been doing to compile an R
+package for Windows.  Check out the files <code>src/gnuwin32/INSTALL</code>
+and <code>src/gnuwin32/readme.packages</code>
+in the R source distribution for the official (and recommended)
+approach.  Most importantly, see <a href="http://cran.us.r-project.org/bin/windows/Rtools/">this page</a>.</font>
+
+<p class=noindent><font color="#23238e">Also note:</font> there is an online service (<a href="http://win-builder.r-project.org/">http://win-builder.r-project.org</a>) for building and checking R packages for Windows.
+
+<a name="prep"></a><h3>Preparations</h3>
+
+<p><ol>
+  <li>Look at the <a href="http://cran.r-project.org/doc/manuals/R-admin.html#The-Windows-toolset">Windows toolset appendix</a> in the <a href="http://cran.r-project.org/doc/manuals/R-admin.html">R Administration manual</a>.</li><p>
+
+  <li>Go to the webpage <a
+      href="http://cran.us.r-project.org/bin/windows/Rtools">cran.us.r-project.org/bin/windows/Rtools</a> </li><p>
+
+  <li>Download and install the <code>Rtools.exe</code> file.   This includes:
+
+      <p><ol type="a">
+      <li>A bunch of command-line tools</li><p>
+      <li>Perl</li><p>
+      <li>The MinGW compiler
+       </li></ol>
+
+       <p>When given the option to edit your PATH, take it (see item 5 below).
+       </li><p>
+
+   <li>You may also want:
+
+      <p><ol type="a">
+      <li><a href="http://msdn.microsoft.com/en-us/library/ms669985.aspx">Microsoft's HTML Help Workshop</a></li><p>
+      <li><a href="http://www.miktex.org/">MikTeX</a></li><p></ol></li><p>
+
+
+  <li> Make sure your PATH contains all of the right directories (e.g., that the R bin directory is correct).
+       (When you install <code>Rtools.exe</code>, you're given the option to edit your PATH.)
+       <p><ol type="a">
+         <li>Go to "<font color="maroon">Control Panel -> System</font>."</li><p>
+     <li>Click on the tab "<font color="maroon">Advanced</font>" and
+          then on "<font color="maroon">Environment
+          Variables</font>."</li><p>
+     <li>Highlight "<font color="maroon">Path</font>" at the bottom
+          and click "<font color="maroon">Edit</font>".</li><p>
+     <li>In the character string in "<font
+          color="maroon">Variable Value</font>", you want
+          <code>c:\Rtools\bin;c:\Rtools\perl\bin;c:\Rtools\MinGW\bin;c:\R\bin</code>
+          and then any other stuff at the end.
+          (Most problems I've experienced have been due to incorrect directories here, or an incorrect order in the directories.)</li><p>
+       </ol><p>
+  </ol>
+
+<p class=noindent><hr>
+
+<a name="build"></a><h3>Building an R package in Windows</h3>
+
+<p>With R version 2.14, this is easier than ever before.
+  I'll use, as an
+  example, my own package, <a href="http://www.rqtl.org"><code>qtl</code></a>.
+
+<p class=noindent><ol>
+    <li>Go to the directory containing the source package, say <code>c:\MyRpackages</code>
+     (containing the file <code>qtl_1.22-18.tar.gz</code>)</li><p>
+
+    <li>Type
+    <code>R CMD INSTALL --build qtl_1.22-18.tar.gz</code></li><p>
+
+    <li>A file like <code>qtl_1.22-18.zip</code> should be created.
+    </li><p>
+</ol></p>
+
+<p>To build the package for both 32- and 62-bit Windows, you need to
+<p class=noindent><ol>
+  <li>Select to include the 64-bit files when you install R.</li><p>
+  <li>Build the package using <code>R CMD INSTALL --build
+  --compile-both qtl_1.22-18.tar.gz</code></li><p>
+</ol><p>
+
+<p class=noindent> <hr>
+<table cellspacing="0" cellpadding="0" width=100%>
+<tr><td align="left"><p class=noindent>
+<a href="../index.html">Back to home page</a>
+<td align="right"><font size=1>
+<!-- hhmts start -->
+Last modified: Mon Apr  9 10:16:06 2012
+<!-- hhmts end -->
+</table></body></html>

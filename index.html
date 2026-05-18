@@ -1,0 +1,304 @@
+<html> <head>
+<title>Intro to R</title>
+<link rel=stylesheet type="text/css" href="kbroman.css">
+</head>
+
+<body>
+
+<h2>Introduction to R</h2>
+
+<p>All statisticians should be proficient in <a
+href="http://www.biostat.wisc.edu/~kbroman/Cintro">C</a> (for speed),
+<a href="http://www.biostat.wisc.edu/~kbroman/perlintro">perl</a>
+(for data manipulation), and
+<a href="http://www.biostat.wisc.edu/~kbroman/Rintro">R</a> (for
+interactive analyses and graphics).  Think "CPR".
+
+<p>As described on the <a href="http://www.r-project.org">R
+project web page</a>:
+
+<p class=indent> "<font color="#23238e">R is a system for
+statistical computation and
+graphics.  It consists of a language plus a run-time environment with
+graphics, a debugger, access to certain system functions, and the
+ability to run programs stored in script files.</font>
+
+<p class=indent>"<font color="#23238e">The core of R is an
+interpreted computer language
+which allows branching and looping as well as modular programming
+using functions. Most of the user-visible functions in R are written
+in R. It is possible for the user to interface to procedures written
+in the C, C++, or FORTRAN languages for efficiency. The R distribution
+contains functionality for a large number of statistical
+procedures. Among these are: linear and generalized linear models,
+nonlinear regression models, time series analysis, classical
+parametric and nonparametric tests, clustering and smoothing. There is
+also a large set of functions which provide a flexible graphical
+environment for creating various kinds of data
+presentations. Additional modules are available for a variety of
+specific purposes.</font>"
+
+<p>I use R for all interactive statistical analyses and graphics.
+Virtually all of the software I produce is now written as add-on
+packages for R.  The computationally intensive portions of such
+software are written in C, but writing such software as a package for
+R makes the data input/output to the C code extremely easy, and makes
+it easy to create documentation and provide graphical facilities.
+Moreover, R has a very extensive mathematics library, so I don't need
+to re-write things that have already been well coded.
+
+<p>While I intended this page to provide an introduction similar to my
+<a href="http://www.biostat.wisc.edu/~kbroman/perlintro">Introduction
+to Perl</a> page, instead, I am leaving this as a list of links and
+then a few tips at the bottom.
+
+<p class=noindent><hr>
+
+<h3>Topics</h3>
+
+<ul><li><a href="#resources">Resources</a>
+    <li><a href="Rwin.html">Notes on R for Windows</a>
+    <li><a href="Rmac.html">Notes on R for Mac OSX</a>
+    <li><a href="#hints">Various hints</a>
+    <li><a href="Rwinpack.html">Building R packages for Windows</a>
+<!--
+    <li><a href="Rmacpack.html">Building R packages for MacOS X</a>
+-->
+</ul>
+
+<p class=noindent><hr>
+
+<a name="resources"><h3>Resources</h3></a>
+
+<h4>Web</h4>
+
+<p>
+<ul>
+  <li> <a href="Rmac.html">My notes on R for Mac OSX</a>
+  <li> <a href="Rwin.html">My notes on R for Windows</a></li><br>
+
+  <li> <a href="http://cran.r-project.org/">R
+      Archive</a>
+  <li> <a href="http://cran.r-project.org/doc/FAQ/R-FAQ.html"
+     >R FAQ</a>
+  <li><a href="http://wiki.r-project.org/rwiki/doku.php">R wiki</a>
+  <li> <a
+      href="http://cran.r-project.org/bin/windows/rw-FAQ.html"
+     >R for Windows FAQ</a>
+  <li> <a href="http://cran.r-project.org/bin/macosx/RMacOSX-FAQ.html">R for Macintosh FAQ</a>
+  <li><a href="http://r.research.att.com">R for Macintosh developer page</a>
+  <li> <a href="http://www.murdoch-sutherland.com/Rtools/">Building R from source on Windows</a>
+  <li><a href="http://journal.r-project.org/">R Journal</a>
+  <li> <a href="http://www.R-project.org/mail.html">R mailing lists</a>
+  <li><a href="https://www.stat.math.ethz.ch/pipermail/r-help/">R-help
+      mailing list archive</a>
+  <li><a
+       href="https://stat.ethz.ch/pipermail/r-sig-mac/">R-SIG-Mac
+       mailing list archive</a></li><br>
+
+  <li><a href="http://cran.us.r-project.org/other-docs.html">Contributed R documentation</a>
+  <li><a href="http://pj.freefaculty.org/R/statsRus.html">R tips</a>
+  <li> <a href="http://www.stat.wisc.edu/~larget/r.html">R primer for introductory statistics</a> [Bret Larget]
+</ul>
+
+<h4>PDF documents</h4>
+
+<ul>
+      <li><a
+      href="http://www.math.csi.cuny.edu/Statistics/R/simpleR/index.html">SimpleR</a> (John Verzani)
+
+  <li> Using R for data analysis and graphics [<a
+      href="http://cran.r-project.org/doc/contrib/usingR.pdf"
+     >pdf (693k; 112 pgs)</a>] (JH Maindonald)
+  <li> R reference card [<a
+      href="http://cran.r-project.org/doc/contrib/refcard.pdf"
+     >pdf (59k, 1 pg)</a>] (J Baron)
+  <li> <a href="http://cran.r-project.org/manuals.html"
+     >The R manuals</a>:
+      <ul>
+    <li> An introduction to R [<a href="http://cran.r-project.org/doc/manuals/R-intro.pdf"
+       >pdf</a>] (The official introduction)
+    <li> Writing R extensions [<a href="http://cran.r-project.org/doc/manuals/R-exts.pdf"
+       >pdf</a>] (Explanations of
+        writing packages and calling C from R)
+    <li> The R reference index [<a href="http://cran.r-project.org/doc/manuals/fullrefman.pdf"
+       >pdf</a>] (The R help pages
+        printed out)
+      </ul>
+</ul>
+
+<h4>Books</h4>
+
+<ul>
+  <li><a href="http://www.R-project.org/doc/bib/R-books.html">A comprehensive list of books related to R</a>
+  <li>The most important book:
+<ul>
+<li>WN Venables and BD Ripley (2002) <a href="http://www.amazon.com/exec/obidos/ASIN/0387954570/7210-20">Modern applied statistics with
+      S</a>, 4th edition.  Springer
+      [<a href="http://www.stats.ox.ac.uk/pub/MASS4/">Online complements</a>]
+</ul>
+
+  <li>Beginning books:
+<ul>
+  <li>P Dalgaard (2008) <a href="http://www.amazon.com/exec/obidos/ASIN/0387790535/7210-20">Introductory statistics with R</a>, 2nd edition
+      Springer
+
+  <li>AF Zuur, EN Ieno, EHWG Meesters (2009) <a href="http://www.amazon.com/exec/obidos/ASIN/0387938362/7210-20">A beginner's guide to R</a>, Springer
+
+  <li>MJ Crawley (2007) <a href="http://www.amazon.com/exec/obidos/ASIN/0470510242/7210-20">The R book</a>, Wiley
+
+  <li>BS Everitt, T Hothorn (2006) <a href="http://www.amazon.com/exec/obidos/ASIN/1584885394/7210-20">A handbook of statistical analyses using R</a>, Chapman & Hall/CRC
+
+  <li>J Maindonald, J Braun (2006) <a href="http://www.amazon.com/exec/obidos/ASIN/0521861160/7210-20">Data analysis and graphics using R</a>, 2nd edition, Cambridge University Press
+
+  <li>J Verzani (2004) <a href="http://www.amazon.com/exec/obidos/ASIN/1584884509/7210-20">Using R for introductory statistics</a>, Chapman & Hall/CRC
+
+</ul>
+
+  <li>For more advanced programming:
+<ul>
+  <li> WN Venables and BD Ripley (2000) <a href="http://www.amazon.com/exec/obidos/ASIN/0387989668/7210-20">S
+      programming.</a> Springer
+
+  <li>JM Chambers (2008) <a href="http://www.amazon.com/exec/obidos/ASIN/0387759352/7210-20">Software for Data Analysis: Programming with R</a>, Springer
+</ul>
+
+  <li>Special topics:
+<ul>
+  <li>JJ Faraway (2004) <a href="http://www.amazon.com/exec/obidos/ASIN/1584884258/7210-20">Linear models with R</a>, Chapman & Hall/CRC
+
+  <li>P Spector (2008) <a href="http://www.amazon.com/exec/obidos/ASIN/0387747303/7210-20">Data manipulation with R</a>, Springer
+  <li>PSP Cowpertwait and A Metcalfe (2009) <a href="http://www.amazon.com/exec/obidos/ASIN/0387886974/7210-20">Introductory Time Series with R</a>. Springer
+  <li>C Ritz, JC Streibig (2009) <a href="http://www.amazon.com/exec/obidos/ASIN/0387096159/7210-20">Nonlinear regression with R</a>, Springer
+  <li>RS Bivand, EJ Pebesma, V Gomez-Rubio (2008) <a href="http://www.amazon.com/exec/obidos/ASIN/0387781706/7210-20">Applied Spatial Data Analysis with R</a>, Springer
+
+  <li>R Gentleman (2008) <a href="http://www.amazon.com/exec/obidos/ASIN/1420063677/7210-20">R programming for bioinformatics</a>, Chapman & Hall/CRC
+</ul>
+
+
+<!--
+  <li><a href="http://www.amazon.com/exec/obidos/ASIN//7210-20"></a>
+-->
+
+</ul>
+
+<p class=noindent><hr>
+
+<a name="hints"><h3>Various hints</h3></a>
+
+<h4>Math expressions in plots</h4>
+
+<p> One of the nice additions to R (relative to Splus) is the easy
+inclusion of mathematical expressions in plots, using the function
+<code> expression()</code>.  Take a look at
+<code>help(plotmath)</code> to see a big list of what you can do; also
+look at the examples in the help file for the function
+<code>legend</code>, and consider the following:
+
+<blockquote><code><pre> plot(rnorm(100),rnorm(100),xlab=expression(hat(mu)[0]),
+      ylab=expression(alpha^beta),
+      main=expression(paste("Plot of ", alpha^beta, " versus ", hat(mu)[0])))</pre>
+</code></blockquote>
+
+<h4>Emacs and ESS</h4>
+
+<p>For those running R within unix or Linux, I highly recommend
+running R from within emacs.  I like to have a really big emacs
+window, and so I put the following line in my <code>~/.bashrc</code>
+file.  (I use the <code>bash</code> shell; if you use
+<code>tcsh</code> or <code>csh</code>, put the analogous line in your <code>~/.tcshrc</code> or <code>~/.cshrc</code> file.  After doing this, you can
+type <code>be</code> to get a big emacs window.
+<blockquote><code><pre>alias be='emacs -bg black -fg white -geometry 99x50+560+122 &'</pre></code></blockquote>
+
+<p>Place the following lines in your <code>~/.emacs</code> file in order
+to get fancy highlighting and to get access to <a
+href="http://ess.r-project.org/">ESS</a> (Emacs Speaks
+Statistics).
+
+<blockquote><code><pre>;; load ESS
+(load "/sw/share/emacs/site-lisp/ess-5.3.0/lisp/ess-site")
+
+;; automatic Font Lock mode in TeX mode
+(add-hook 'tex-mode-hook 'turn-on-font-lock)
+;; if Font Lock necessary for other than .tex files, uncomment following
+(global-font-lock-mode t)
+
+;; modes for other files
+ auto-mode-alist (append (list '("\\.c$" . c-mode)
+       '("\\.tex$" . latex-mode)
+       '("\\.S$" . S-mode)
+       '("\\.s$" . S-mode)
+       '("\\.html$" . html-mode)
+                               '("\\.emacs" . emacs-lisp-mode)
+                 )
+      auto-mode-alist)
+
+;; html helper mode from http://www.farne.uklinux.net/emacs-primer.html
+(autoload 'html-helper-mode "html-helper-mode" "Yay HTML" t)
+(setq auto-mode-alist (cons '("\\.html$" . html-helper-mode) auto-mode-alist))
+(setq html-helper-do-write-file-hooks t)
+
+;; ESS for Sweave files
+(defun Rnw-mode ()
+       (require 'ess-noweb)
+       (noweb-mode)
+       (if (fboundp 'R-mode)
+          (setq noweb-default-code-mode 'R-mode)))
+     (add-to-list 'auto-mode-alist '("\\.Rnw\\'" . Rnw-mode))
+     (add-to-list 'auto-mode-alist '("\\.Snw\\'" . Rnw-mode))
+     (setq reftex-file-extensions
+          '(("Snw" "Rnw" "nw" "tex" ".tex" ".ltx") ("bib" ".bib")))
+     (setq TeX-file-extensions
+          '("Snw" "Rnw" "nw" "tex" "sty" "cls" "ltx" "texi" "texinfo"))
+</pre></code></blockquote>
+
+<p> Having done the above, open an emacs window and type <code>M-x
+R</code> and then enter the subdirectory in which you wish to run R.
+(<code>M-x</code> means press the Esc key and then press x.
+down the diamond button while pressing x.)
+
+<h4>.Renviron file</h4>
+<p> You likely will want to create an <code>~/.Renviron</code> file in
+order to let R know some general parameters.
+My <code>~/.Renviron</code> file contains the following:
+<blockquote><code><pre>R_PAPERSIZE=letter
+R_LIBS=/Users/kbroman/Rlibs
+EDITOR=emacs
+</pre></code></blockquote>
+
+<h4>.Rprofile file</h4>
+
+<p> You might also want to create an <code>~/.Rprofile</code> file.  R
+code in this file will be run anytime you start R, no matter what
+subdirectory you start in (unless there's an <code>.Rprofile</code>
+within that subdirectory, in which case that is read instead.
+Examples of what you may wish to put there include commands to modify
+the options and/or load certain packages (libraries).
+
+<h4>Locally installed packages</h4>
+
+<p> To install an R package (e.g., qtl_0.76.tar.gz) locally (e.g.,
+in the directory <code>/users/student/auser/Rlib</code>), type
+<blockquote><code>
+<pre>R INSTALL --library=/users/student/auser/Rlib qtl_0.76.tar.gz
+</pre></code></blockquote>
+
+<p> In your <code>~/.Renviron</code> file, include the line
+<blockquote><code>
+<pre>R_LIBS=/users/student/auser/Rlib
+</pre></code></blockquote>
+
+<p> Within R, when you type <code>library()</code>, you should see separate
+listings of the packages installed locally and those on the main
+system.
+
+<p class=noindent><hr>
+<table cellspacing="0" cellpadding="0" width=100%>
+<tr><td align="left"><p class=noindent>
+<a href="../index.html">Back to home page</a>
+<td align="right"><font size=1>
+<!-- hhmts start -->
+Last modified: Mon Jun 29 23:52:05 2009
+<!-- hhmts end -->
+</table>
+</body></html>

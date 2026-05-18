@@ -1,0 +1,133 @@
+<html> <head>
+<title>Building R packages in MacOS X</title>
+<link rel=stylesheet type="text/css" href="kbroman.css">
+</head>
+
+<body>
+<a name="top"><h2>Building R packages in MacOS X</h2>
+
+<p class=noindent><hr>
+
+<p class=noindent><font color="red"><b>Disclaimer</b>: The
+instructions below describe what I've been doing to compile an R
+package for Mac OS X.  Check out the file <code>src/macintosh/INSTALL</code>
+in the R source distribution for the official (and recommended)
+approach.</font>
+
+<a name="prep"><h3>Note</h3>
+
+<p>There are two versions of R for the Mac: a Carbon version and a Darwin
+version.  The Carbon version is distributed as a binary, and looks
+just like any other Mac software.  The Darwin version, on the other
+hand, is unix-like, and requires the installation of X-windows.
+
+<p>As most Mac users are probably not interested in a unix-based
+version of R, I've been focussing only on the Carbon version of R for
+the Mac.
+
+<p>On the R web page, the Carbon version is listed as "MacOS (System
+8.6 to 9.1 and MacOS X)" while the Darwin version is listed as "MacOS
+X (Darwin/X11)"
+
+
+<p class=noindent><hr>
+
+<a name="prep"><h3>Preparations</h3>
+
+<p><ol>
+  <li>A key problem on the Mac concerns line endings.  One usually has
+      "Stuffit Expander" available on the Mac.  I recommend also
+      getting the following two programs:<p>
+
+      <p><ol type="a">
+      <li><a
+      href="http://www.ksu.edu/InfoTech/helpdesk/macdl.html">Suntar 2.2.3</a> (This
+      runs in "Classic" (i.e. MacOS 9) mode.)  It
+      de-tars a bundle of files, fixing up the line endings in
+      each.</li><p>
+      <li><a href="http://www.barebones.com">BBEdit Lite 6.1 for OS
+      X</a>.  This is an text-file editor which can fix up line
+      endings for you.
+      </ol><p>
+
+  <li>Acquire the <a
+href="http://developer.apple.com/tools/mpw-tools/">Macintosh
+Programmer's Workshop (MPW)</a> software.
+      This also runs in "Classic" (i.e. MacOS 9) mode.</li><p>
+
+  <li>Download the compiled, Carbon version of R.  Unstuff it and
+      place it in <code>Applications/rm150</code>. </li><p>
+
+  <li>Download the R source code (e.g., R-1.5.0-tar.gz).  Extract it
+      using a combination of "Stuffit Expander" and "Suntar".
+      (Stuffit Expander will automatically gunzip it, creating the tar
+      file, and then will start de-taring things.  Cancel the latter
+      part, thus using Stuffit Expander only for the gunzipping part.
+      Then use Suntar to de-tar the tar file; this will fix up the
+      line endings problem.)<br>
+      I place the resulting directory in <code>Users:kbroman:R-1.5.0</code> (or the
+      equivalent). </li><p>
+
+  <li>Create empty files <code>src/include/Rversion.h</code> and
+      <code>src/include/Rconfig.h</code> within
+<code>Users:kbroman:R-1.5.0</code>. (I open a
+      unix window, change to the src/include directory, and use the
+      unix tool <code>touch</code>.) </li><p>
+
+ <li>Rename <code>src/include/Rmath.h.in</code> as <code>src/include/Rmath.h</code>. </li><p>
+
+  <li>Use BBEdit to fix the line endings in <code>Rversion.h</code>, <code>Rconfig.h</code> and
+      <code>Rmath.h</code>.</li>
+</ol>
+
+<p class=noindent><hr>
+
+<a name="build"><h3>Building an R package for the Mac </h3>
+
+<p>Note: I use the example of the "qtl" package.  Replace "qtl" and
+"kbroman" and such things with what is appropropriate for your package
+and your system.
+
+<p class=noindent><ol>
+  <li>Build your package in Windows and place it in
+      <code>Applications:rm150:library</code>.  Remove the file <code>qtl.dll</code>
+      from the <code>Applications:rm150:library:qtl:libs</code> directory.</li><p>
+
+  <li>Extract the gzipped, tarred, unix source file for your package,
+      using a combination of Stuffit Expander and Suntar (to fix up
+      the line endings) and place the resulting directory in the
+      equivalent of <code>Users:kbroman:Rqtl:qtl</code>.</li><p>
+
+  <li>Create a makefile (like this one: <a href="Makefile.mac">Makefile.mac</a>), edit it
+      appropriately, and place it in the equivalent of
+      <code>Users:kbroman:Rqtl:qtl:src</code>.</li><p>
+
+  <li>Start MPW<p>
+      <ol type="a"><li>Set the directory (use <font
+      color="maroon">Directory -> Set directory...</font>) to the equivalent of
+      <code>Users:kbroman:Rqtl:qtl:src</code>. </li><p>
+
+      <li>Execute the following commands.  Note that you need to use
+      the "enter" key rather than the "return" key!
+<font color="blue"><pre>make -f Makefile.mac > build
+build</pre></font></li></ol><p>
+
+  <li>Move the file <code>qtlLib</code> into the directory
+      <code>Applications:rm150:library:qtl:libs</code>.</li><p>
+
+  <li>Use <a href="http://www.stuffit.com/stuffit/lite/">DropStuff</a> to create a stuffit file of the
+      <code>Applications:rm150:library:qtl</code> directory.</li>
+</ol>
+
+
+
+<p class=noindent>
+<table cellspacing="0" cellpadding="0" width=100%>
+<hr>
+<tr><td align="left"><p class=noindent>
+<a href="../index.html">Back to home page</a>
+<td align="right"><p class=small>
+<!-- hhmts start -->
+Last modified: Sun Nov 10 19:31:17 EST 2002
+<!-- hhmts end -->
+</table></body></html>

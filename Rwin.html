@@ -1,0 +1,295 @@
+<html> <head>
+<title>Notes on R for Windows</title>
+<link rel=stylesheet type="text/css" href="kbroman.css">
+</head>
+
+<body>
+<a name="top"></a><h2>Notes on R for Windows</h2>
+
+<p class=noindent> <hr>
+
+<a name="contents"></a><h3>Contents</h3>
+
+<ol class=large>
+  <li><a href="#install">Installation</a>
+  <li><a href="#start">Getting started</a>
+  <li><a href="#resources">Resources</a>
+  <li><a href="#startup">Start-up files</a>
+  <li><a href="#projects">Dealing with multiple projects</a>
+  <li><a href="#hints">Hints</a>
+</ol>
+
+<p class=noindent><hr>
+
+<a name="install"></a><h3>Installation</h3>
+
+<p class=noindent>
+<ol>
+  <li>Download the file <a
+      href="http://cran.us.r-project.org/bin/windows/base/R-2.7.2-win32.exe">R-2.7.2-win32.exe</a>, or the equivalent, from <a href="http://cran.us.r-project.org/bin/windows/base">http://cran.us.r-project.org/bin/windows/base</a>.   <p>
+
+  <li>Run <a
+      href="http://cran.us.r-project.org/bin/windows/base/R-2.7.2-win32.exe">R-2.7.2-win32.exe</a>
+      by double-clicking on it.<p>
+
+  <li>The installation program will create the directory
+      <code>c:\Program Files\R\R-2.7.2</code> where "<code>R-2.7.2</code>"
+      may vary, according to the version of R that you have installed.<p>
+
+  <li>The actual R program will be
+      <code>c:\Program Files\R\R-2.7.2\bin\Rgui.exe</code>.  A windows
+      "shortcut" should have been created on the desktop and/or in the
+      start menu.
+</ol>
+
+<p class=noindent><a href="#top">[Back to top]</a>
+<p class=noindent> <hr>
+
+<a name="start"></a><h3>Getting started</h3>
+
+<ol>
+  <li> <b>Start</b> R by double-clicking on the R icon on the desktop, or by
+      clicking on the R icon in the start menu.
+
+      <p class=noindent>The R graphical user interface (GUI) will open, containing a
+      single window called the command or console window.  <br>The
+      greater-than sign (<code> > </code>) is R's "prompt;" it indicates
+      that R is ready for you to enter commands.  <p>
+
+  <li> Look at some of the freely-available <a
+      href="#resources"><b>resources</b> for R</a>.<p>
+
+  <li> Getting <b>help</b> within R:
+      <p><ol type="a">
+        <li>The html version of R's help pages are best.  Within R,
+        use the menu bar: <font color="maroon">Help:R language
+        (html)</font>.<p>
+
+        <li>At the command prompt, type, for example,
+        <code>?read.table</code> or
+        <code>help(read.table)</code> to get help on the function
+        <code>read.table</code>.
+        If you first type <code>options(htmlhelp=TRUE)</code>,
+        the above commands will open the html version of the help
+        files.  <p>
+
+    <li>At the command prompt, type, for example,
+        <code>help.search("read")</code> or
+        <code>apropos("read")</code> to search for things in R
+        related to the word "read."
+        Alternatively, go to the menu bar:
+        <font color="maroon">Help:Apropos</font>
+      </ol><p>
+
+  <li> You can <b>exit</b> R in at least three ways:
+      <p><ol type="a">
+      <li> Click on the <font color="maroon">X</font> in the top-right
+      corner of the GUI. <p>
+      <li> Type <code>q()</code> at the command prompt.<p>
+      <li> Use the menu bar: <font color="maroon">File:Exit</font>.
+    </ol>
+    <p class=noindent>In each case, you will be asked, "Save workspace
+    image?"  Click "Yes" to save your work, "No" to discard your work,
+    or "Cancel" to return to R.
+
+</ol>
+
+
+<p class=noindent><a href="#top">[Back to top]</a>
+<p class=noindent> <hr>
+
+<a name="resources"></a><h3>Resources</h3>
+
+<p> The following is a subset of the resources available for
+learning and using R.
+
+<p> <ol>
+  <li> <a href="http://cran.us.r-project.org"><b>Comprehensive R Archive
+      Network (CRAN)</b></a><p>
+
+  <li> <a href="http://cran.us.r-project.org/manuals.html">R manuals</a>:
+      <ol type="a">
+        <li> <a
+        href="http://cran.us.r-project.org/doc/manuals/R-intro.html"><b>An introduction to R</b></a>
+    <li> <a
+        href="http://cran.us.r-project.org/doc/manuals/R-admin.html">R
+        installation and administration</a>
+    <li> <a
+        href="http://cran.us.r-project.org/doc/manuals/R-data.html">R data import/export</a>
+    <li> <a
+        href="http://cran.us.r-project.org/doc/manuals/R-lang.html">The R language definition</a>
+      </ol><p>
+
+  <li> <a href="http://cran.us.r-project.org/other-docs.html">Contributed documentation</a>:
+      <ol type="a">
+      <li><a
+      href="http://www.math.csi.cuny.edu/Statistics/R/simpleR/index.html"><b>SimpleR</b></a> (John Verzani)
+    <li><a
+        href="http://cran.us.r-project.org/doc/contrib/Lemon-kickstart/index.html">Kickstarting R</a> (Jim Lemon)
+        <li><a
+        href="http://cran.us.r-project.org/doc/contrib/usingR.pdf">Using R for data analysis and graphics</a> (John Maindonald)
+      </ol><p>
+
+  <li> <a href="http://cran.us.r-project.org/faqs.html">Frequently asked
+      questions</a>:
+      <ol type="a">
+        <li> <a href="http://cran.us.r-project.org/doc/FAQ/R-FAQ.html">R
+        FAQ</a>
+    <li>  <a href="http://cran.us.r-project.org/bin/windows/rw-FAQ.html"><b>R Windows
+        FAQ</b></a>
+      </ol><p>
+
+  <li> <a
+      href="http://www.r-project.org/doc/bib/R-publications.html">Publications related to R</a>:
+      <ol type="a">
+<li>WN Venables and BD Ripley (2002) <a href="http://www.amazon.com/exec/obidos/ASIN/0387954570/7210-20">Modern applied statistics with
+      S</a>, 4th edition.  Springer
+      [<a href="http://www.stats.ox.ac.uk/pub/MASS4/">Online complements</a>]
+
+  <li>P Dalgaard (2008) <a href="http://www.amazon.com/exec/obidos/ASIN/0387790535/7210-20">Introductory statistics with R</a>, 2nd edition
+      Springer
+
+  <li>AF Zuur, EN Ieno, EHWG Meesters (2009) <a href="http://www.amazon.com/exec/obidos/ASIN/0387938362/7210-20">A beginner's guide to R</a>, Springer
+
+  <li>MJ Crawley (2007) <a href="http://www.amazon.com/exec/obidos/ASIN/0470510242/7210-20">The R book</a>, Wiley
+
+  <li>BS Everitt, T Hothorn (2006) <a href="http://www.amazon.com/exec/obidos/ASIN/1584885394/7210-20">A handbook of statistical analyses using R</a>, Chapman & Hall/CRC
+
+  <li>J Maindonald, J Braun (2006) <a href="http://www.amazon.com/exec/obidos/ASIN/0521861160/7210-20">Data analysis and graphics using R</a>, 2nd edition, Cambridge University Press
+
+  <li>J Verzani (2004) <a href="http://www.amazon.com/exec/obidos/ASIN/1584884509/7210-20">Using R for introductory statistics</a>, Chapman & Hall/CRC
+
+
+      </ol><p>
+
+  <li> <a href="http://www.R-project.org/mail.html"
+     >R email lists</a> <p>
+
+  <li> <a href="http://cran.us.r-project.org/doc/Rnews/">R newsletter</a>
+
+</ol>
+
+<p class=noindent><a href="#top">[Back to top]</a>
+<p class=noindent> <hr>
+
+<a name="startup"></a><h3>Start-up files</h3>
+
+<p> For the efficient use of R (on your own computer), it is useful to
+create a couple of start-up files, in order to set some default
+options or run some R commands automatically.
+
+<p> The file <code>c:\.Renviron</code> is used to set certain
+environment variables for R.  I recommend a file containing the
+following line, since, by default, R assumes you want A4 paper.
+<pre class=indent>R_PAPERSIZE=letter</pre>
+
+<p> The file <code>c:\.Rprofile</code> is assumed to contain R code,
+which is run at start-up.  I recommend including something like the
+following (to make use of the html version of the help pages the
+default, to turn off the asterices that show up in significance tests).
+You may also use this to automatically load an optional package.
+<pre class=indent>options(htmlhelp=TRUE, show.signif.stars=FALSE)
+</pre>
+
+
+<p class=noindent><a href="#top">[Back to top]</a>
+<p class=noindent> <hr>
+
+<a name="projects"></a><h3>Dealing with multiple projects</h3>
+
+<p> R keeps your "workspace" of objects in a single file
+(<code>.RData</code>), which is read into RAM when R is started and
+potentially written to disk at the end of a session.  (<b>Note</b>: To
+save your workspace without exiting, type <code>save.image()</code> at
+the R prompt.  It is good to do this periodically, so that your work
+is saved in case that R or your computer crashes.)
+
+<p> One may wish to have multiple R workspaces (i.e.,
+<code>.RData</code> files), one for each project or data set.  In
+Windows, we do this as follows:
+
+<p> <ol>
+  <li> Create multiple folders (i.e., directories), one for each
+       project (for example,
+       <code>c:\Rwork\Project1</code> and
+       <code>c:\Rwork\Project2</code>). <p>
+
+  <li> For each project, create a shortcut to the R GUI:
+       <p><ol type="a">
+         <li> Right-click on the R icon on the desktop and select
+          <font color="maroon">Create Shortcut</font>.
+     <li> Right-click on the new icon that is created and select
+          <font color="maroon">Properties</font>.
+     <li> In the properties window that is opened, modify <font
+          color="maroon">Start in:</font> (in the tab <font
+          color="maroon">Shortcut</font>) to the directory for the
+          project (for example, <code>c:\Rwork\Project1</code>).
+     <li> Rename the shortcut to something like <code>R
+          Project1</code>.
+       </ol><p>
+  <li> When you double-click on the icon for this new shortcut, it will
+       open R using the workspace for this project.
+
+</ol>
+
+
+
+<p class=noindent><a href="#top">[Back to top]</a>
+<p class=noindent> <hr>
+
+<a name="hints"></a><h3>Hints</h3>
+
+<p class=noindent> <ul>
+
+  <li> <font color="#23238e">Use the "recording" feature of the
+       graphics window.</font>
+
+       <p class=noindent> After making a plot, select (from the
+       menu bar) <font color="maroon">History:Recording</font>.  After
+       making further plots, you may use the <font color="maroon">Page
+       Up</font> and <font color="maroon">Page Dn</font> keys to go
+       back and forth through the previous plots you've made.<p>
+
+  <li> <font color="#23238e">Save your analysis commands in a text
+       file.</font>
+
+       <p class=noindent>Use a text editor (such as Notepad or an
+       enhanced version such as <a
+       href="http://www.editpadpro.com/editpadclassic.html">EditPad</a>)
+       to edit a file containing your commands.  Use the Windows
+       keyboard shortcut <font color="maroon">Alt:Tab</font> to
+       quickly switch between R and your text editor.
+
+       <p class=noindent>Note that commands you type in R are saved
+       (temporarily) in the file <code>.Rhistory</code> (in the same
+       directory as your <code>.RData</code> file).  You may wish to
+       peruse (or copy and paste from) this file and keep a
+       permanent record your analysis commands. <p>
+
+  <li> <font color="#23238e">Turn off buffered output.</font>
+
+       <p class=noindent>By default, R for Windows prints no
+       messages while a command is running.  I prefer to turn off this
+       "buffered output" feature.  Right-click on the "R Console"
+       window and de-select <font color="maroon">Buffered
+       output</font>.<p>
+
+  <li> <font color="#23238e">To delete all objects in your
+       workspace,</font> type (from the R prompt)
+       <pre class=indent>rm(list=ls())</pre>
+       <p>
+
+</ul>
+
+
+<p class=noindent><a href="#top">[Back to top]</a>
+
+<p class=noindent><hr>
+<table cellspacing="0" cellpadding="0" width=100%>
+<tr><td align="left"><p class=noindent>
+<a href="../index.html">Back to home page</a>
+<td align="right"><font size=1>
+<!-- hhmts start -->
+Last modified: Mon Jun 29 23:50:20 2009
+<!-- hhmts end -->
+</table></body></html>
